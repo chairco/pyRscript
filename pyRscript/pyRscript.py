@@ -51,6 +51,7 @@ class Rscript:
     @contextmanager
     def cd(self, newdir):
         """
+        go to the path
         """
         prevdir = os.getcwd()
         os.chdir(newdir)
@@ -80,7 +81,7 @@ class Rscript:
 
     def run_command_under_r_root(self, cmd, catched=True):
         """
-        subprocess
+        subprocess run on here
         """
         RPATH = self.path
         with self.cd(newdir=RPATH):
