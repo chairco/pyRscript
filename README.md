@@ -12,11 +12,24 @@ Sample Usage:
 >> <ParsedCompletedCommand(returncode=1, args=['Rscript', ...
 ```
 
+
 ## Install
+
+```
+$ git clone https://github.com/chairco/pyRscript
+$ cd pyRscript
+$ pyton setup.py install
+```
 
 
 ## Test
 
+```
+python -m pytest
+```
+
 
 ## Lincese
+
+MIT LICENSE
 
