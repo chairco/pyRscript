@@ -1,8 +1,15 @@
 # pyRscript
 
-It's a easy tool to use subprocess call `Rscript` and execute R program and return information `returncode`, `stdout`, `stderr`.
+It's a easy tool to use subprocess call `Rscript` and execute R program then get the return's information: `returncode`, `stdout`, `stderr`.
 
-Be careful of this is run R in your device machine not vritual machine, be sure the R enivronmet is good on your computer.
+Be careful of this is running R on your device machine not vritual machine, be sure the R enivronmet is good on your computer.
+
+
+Parameter:
++ path: the target R's absolute path.
++ file: R program.
++ cmd: Not necessary but if need parameter use str and split with comma(`,`).
+
 
 Sample Usage:
 ```
