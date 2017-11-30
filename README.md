@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/pyrscript/badge/?version=latest)](http://pyrscript.readthedocs.io/en/latest/?badge=latest)
+
 # pyRscript
 
 It's a easy tool to use subprocess call `Rscript` and execute R program then get the return's information: `returncode`, `stdout`, `stderr`.
