@@ -24,9 +24,19 @@ class Rscript:
     >> import os
     >> from pyRscript import pyRscript
     >> RPATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'R')
-    >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd='-t,tlcd0501,-s,2017-07-13 00:00:00,-e,2017-07-14 00:00:00')
+    >> cmd = '-t,tlcd0501,-s,2017-07-13 00:00:00,-e,2017-07-14 00:00:00'
+    >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
     >> print(r)
-    >> <ParsedCompletedCommand(returncode=1, args=['Rscript', ...
+    >> <Parameter test.R /Users/chairco/OneDrive/SourceCode/python/pyRscript/pyRscript/R ['-t', 'tlcd0501', '-s', '2017-07-13 00:00:00', '-e', '2017-07-14 00:00:00']>
+    >> ret = r.execute()
+    >> print(ret)
+    >> ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-t', 'tlcd0501', '-s', '2017-07-13 00:00:00', '-e', '2017-07-14 00:00:00'], stdout='2017-11-30 22:45:15 INFO::execute ROT...\n2017-11-30 22:45:15 INFO::tid: tlcd0501, st: 2017-07-13 00:00:00, et: 2017-07-14 00:00:00', stderr='Loading required package: methods')
+    >> print(ret.returncode)
+    >> 0
+    >> print(ret.stdout)
+    >> '2017-11-30 22:45:15 INFO::execute ROT...\n2017-11-30 22:45:15 INFO::tid: tlcd0501, st: 2017-07-13 00:00:00, et: 2017-07-14 00:00:00'
+    >> print(ret.stderr)
+    >> 'Loading required package: methods') <class '__main__.ParsedCompletedCommand'
     """
 
     def __init__(self, path, file, cmd=None):
@@ -80,7 +90,6 @@ class Rscript:
                 process = sp.run(cmd)
             return process
 
-    @property
     def execute(self):
         """
         Execute R script
@@ -91,15 +100,11 @@ class Rscript:
         ])
         for cmd_name, cmd in commands.items():
             rprocess[cmd_name] = self.run_command_under_r_root(cmd)
-        return rprocess
+        
+        return self.decode_cmd_out(completed_cmd=rprocess[self.file])
 
     def __repr__(self):
-        ret = self.execute
-        message = self.decode_cmd_out(completed_cmd=ret[self.file])
-        fmt = f'<{message}>'
+        fmt = f'<Parameter {self.file} {self.path} {self.cmd}>'
         return fmt
 
-if __name__ == '__main__':
-    RPATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'R')
-    r = Rscript(path=RPATH, file='test.R', cmd='-t,tlcd0501,-s,2017-07-13 00:00:00,-e,2017-07-14 00:00:00')
-    print(r)
+
