@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1ac094a12154969d1b1d2ec91c3415bfd33213a47212eca53cb491166dd61a10"
+            "sha256": "68ec583fe1278da1f0ad3af25dc5abf48cae5353143d13ef298687d267ee86ef"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -29,6 +29,9 @@
         ]
     },
     "default": {
+        "50721fc": {
+            "path": "/Users/chairco/OneDrive/SourceCode/python/pyRscript/pyRscript"
+        },
         "alabaster": {
             "hashes": [
                 "sha256:2eef172f44e8d301d25aff8068fddd65f767a3f04b5f15b0f4922f113aa1c732",

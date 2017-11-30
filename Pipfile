@@ -11,6 +11,7 @@ sphinx = "*"
 tox = "*"
 pytest = "*"
 pytest-cov = "*"
+"50721fc" = {path = "/Users/chairco/OneDrive/SourceCode/python/pyRscript/pyRscript"}
 
 
 [dev-packages]

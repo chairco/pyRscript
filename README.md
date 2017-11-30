@@ -35,9 +35,7 @@ Sample Usage:
 ## Install
 
 ```
-$ git clone https://github.com/chairco/pyRscript
-$ cd pyRscript
-$ pyton setup.py install
+$ pip install pyRscript
 ```
 
 
