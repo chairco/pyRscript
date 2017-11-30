@@ -1,12 +1,14 @@
 # pyRscript
 
-It's a easy tool to use subprocess call Rscript and execute R program and return returncode, stdout, stderr.
+It's a easy tool to use subprocess call `Rscript` and execute R program and return information `returncode`, `stdout`, `stderr`.
+
+Be careful of this is run R in your device machine not vritual machine, be sure the R enivronmet is good on your computer.
 
 Sample Usage:
 ```
 >> import os
 >> from pyRscript import pyRscript
->> RPATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'R')
+>> RPATH = os.path.dirname('test.R')
 >> cmd = '-t,tlcd0501,-s,2017-07-13 00:00:00,-e,2017-07-14 00:00:00'
 >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
 >> print(r)
