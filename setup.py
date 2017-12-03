@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """
     pyRscript
-    ~~~~
+    ---------
 
+    
     It's a easy tool to use subprocess call Rscript and execute R program and return returncode, stdout, stderr. 
 
     :copyright: (c) 2017 by chairco <chairco@gmail.com>.
