@@ -10,8 +10,8 @@ sys.toolid <- args[2]
 
 if (length(args) <= 1) {
     loginfo('Arguments toolid and mode need supplid.')
-} else if (args[1] == 'ETL' & args[2] != 'NIKON') {
-    loginfo(sprintf('ETL, args: %s %s', args[1], args[2]))
+} else if (args[1] == 'test' & args[2] != 'test2') {
+    loginfo(sprintf('Input 2 args "test" and "not test2": %s %s', args[1], args[2]))
 } else {
-    loginfo(sprintf('ETL & NIKON, args: %s %s', args[1], args[2]))
+    loginfo(sprintf('Input 2 args:, args: %s %s', args[1], args[2]))
 }

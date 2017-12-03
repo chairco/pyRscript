@@ -17,20 +17,20 @@ Sample Usage:
 ```
 >> import os
 >> from pyRscript import pyRscript
->> RPATH = os.path.dirname('test.R')
->> cmd = '-t,tlcd0501,-s,2017-07-13 00:00:00,-e,2017-07-14 00:00:00'
+>> RPATH = '/home/pyRscript'
+>> cmd = '-d,SN1234,-t,2017-07-13 00:00:00'
 >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
 >> print(r)
->> <Parameter test.R /Users/chairco/OneDrive/SourceCode/python/pyRscript/pyRscript/R ['-t', 'tlcd0501', '-s', '2017-07-13 00:00:00', '-e', '2017-07-14 00:00:00']>
+>> <Parameter test.R /home/pyRscript ['-d', 'SN1234', '-t', '2017-07-13 00:00:00']>
 >> ret = r.execute()
 >> print(ret)
->> ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-t', 'tlcd0501', '-s', '2017-07-13 00:00:00', '-e', '2017-07-14 00:00:00'], stdout='2017-11-30 22:45:15 INFO::execute ROT...\n2017-11-30 22:45:15 INFO::tid: tlcd0501, st: 2017-07-13 00:00:00, et: 2017-07-14 00:00:00', stderr='Loading required package: methods')
+>> ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-d', 'SN1234', '-t', '2017-07-13 00:00:00'], stdout='2017-12-03 11:35:38 INFO::Execute R\n2017-12-03 11:35:39 INFO::id: SN1234, time: 2017-07-13 00:00:00', stderr='Loading required package: methods')
 >> print(ret.returncode)
 >> 0
 >> print(ret.stdout)
->> '2017-11-30 22:45:15 INFO::execute ROT...\n2017-11-30 22:45:15 INFO::tid: tlcd0501, st: 2017-07-13 00:00:00, et: 2017-07-14 00:00:00'
+>> '2017-12-03 11:37:59 INFO::Execute R\n2017-12-03 11:37:59 INFO::id: SN1234, time: 2017-07-13 00:00:00'
 >> print(ret.stderr)
->> 'Loading required package: methods') <class '__main__.ParsedCompletedCommand'
+>> 'Loading required package: methods'
 ```
 
 
