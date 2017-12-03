@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 import os
 import pytest
+import time
 
 from pyRscript import pyRscript
+from collections import namedtuple
+
 
 @pytest.fixture
 def rscript():
@@ -22,3 +25,17 @@ def test_script(rscript):
     ret = rscript.execute()
     assert str(type(ret)) == "<class 'pyRscript.pyRscript.ParsedCompletedCommand'>"
     assert ret.returncode == 0
+
+
+def test_decode_cmd_out(rscript):
+    ParsedCompletedCommand = namedtuple(
+        'ParsedCompletedCommand',
+        ['returncode', 'args', 'stdout', 'stderr']
+    )
+    c = ParsedCompletedCommand(
+            args=['Rscript', 'test.R', '-d', 'SN1234', '-t', '2017-07-13 00:00:00'], 
+            returncode=0, 
+            stdout=b'test',
+            stderr=b'test'
+        )
+    assert repr(rscript.decode_cmd_out(c)) == "ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-d', 'SN1234', '-t', '2017-07-13 00:00:00'], stdout='test', stderr='test')"

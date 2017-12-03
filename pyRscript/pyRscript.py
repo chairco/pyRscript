@@ -23,7 +23,7 @@ class Rscript:
     example:
     >> import os
     >> from pyRscript import pyRscript
-    >> RPATH = '/home/pyRscript'
+    >> RPATH = '/home/pyRscript' # also ex: os.path.join(os.path.dirname(os.path.abspath('test.R')), 'R')
     >> cmd = '-d,SN1234,-t,2017-07-13 00:00:00'
     >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
     >> print(r)
