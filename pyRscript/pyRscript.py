@@ -70,14 +70,14 @@ class Rscript:
             try:
                 stdout = str(bytes(completed_cmd.stdout), 'big5').strip()
             except AttributeError:
-                stdout = str(bytes(completed_cmd.stdout)).strip()
+                stdout = str(bytes(completed_cmd.stdout).decode('utf-8')).strip()
         try:
             stderr = completed_cmd.stderr.encode('utf-8').decode()
         except AttributeError:
             try:
                 stderr = str(bytes(completed_cmd.stderr), 'big5').strip()
             except AttributeError:
-                stderr = str(bytes(completed_cmd.stderr)).strip()
+                stderr = str(bytes(completed_cmd.stderr).decode('utf-8')).strip()
         return ParsedCompletedCommand(
             completed_cmd.returncode,
             completed_cmd.args,
