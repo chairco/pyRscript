@@ -21,22 +21,22 @@ class Rscript:
     :type folder: str, default '', only support the sub folder 
 
     example:
-    >> import os
-    >> from pyRscript import pyRscript
-    >> RPATH = '/home/pyRscript' # also ex: os.path.join(os.path.dirname(os.path.abspath('test.R')), 'R')
-    >> cmd = '-d,SN1234,-t,2017-07-13 00:00:00'
-    >> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
-    >> print(r)
-    >> <Parameter test.R /home/pyRscript ['-d', 'SN1234', '-t', '2017-07-13 00:00:00']>
-    >> ret = r.execute()
-    >> print(ret)
-    >> ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-d', 'SN1234', '-t', '2017-07-13 00:00:00'], stdout='2017-12-03 11:35:38 INFO::Execute R\n2017-12-03 11:35:39 INFO::id: SN1234, time: 2017-07-13 00:00:00', stderr='Loading required package: methods')
-    >> print(ret.returncode)
-    >> 0
-    >> print(ret.stdout)
-    >> '2017-12-03 11:37:59 INFO::Execute R\n2017-12-03 11:37:59 INFO::id: SN1234, time: 2017-07-13 00:00:00'
-    >> print(ret.stderr)
-    >> 'Loading required package: methods'
+    >>> import os
+    >>> from pyRscript import pyRscript
+    >>> RPATH = '/home/pyRscript' # also ex: os.path.join(os.path.dirname(os.path.abspath('test.R')), 'R')
+    >>> cmd = '-d,SN1234,-t,2017-07-13 00:00:00'
+    >>> r = pyRscript.Rscript(path=RPATH, file='test.R', cmd=cmd)
+    >>> print(r)
+    >>> <Parameter test.R /home/pyRscript ['-d', 'SN1234', '-t', '2017-07-13 00:00:00']>
+    >>> ret = r.execute()
+    >>> print(ret)
+    >>> ParsedCompletedCommand(returncode=0, args=['Rscript', 'test.R', '-d', 'SN1234', '-t', '2017-07-13 00:00:00'], stdout='2017-12-03 11:35:38 INFO::Execute R\n2017-12-03 11:35:39 INFO::id: SN1234, time: 2017-07-13 00:00:00', stderr='Loading required package: methods')
+    >>> print(ret.returncode)
+    >>> 0
+    >>> print(ret.stdout)
+    >>> '2017-12-03 11:37:59 INFO::Execute R\n2017-12-03 11:37:59 INFO::id: SN1234, time: 2017-07-13 00:00:00'
+    >>> print(ret.stderr)
+    >>> 'Loading required package: methods'
     """
 
     def __init__(self, path, file, cmd=None):
