@@ -14,7 +14,7 @@ Parameter:
 
 
 Sample Usage:
-```
+```python
 >>> import os
 >>> from pyRscript import pyRscript
 >>> RPATH = '/home/pyRscript'
